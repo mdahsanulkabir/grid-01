@@ -20,9 +20,12 @@ body {
     margin: 100px auto;
     padding: 10px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 10px;
-    grid-auto-rows: 200px;
+    /* grid-auto-rows: minmax(200px, auto); */
+    align-items: end;
+
 }
 
 .item {
@@ -31,4 +34,10 @@ body {
     font-size: 20px;
     padding: 20px;
     border: 1px solid skyblue;
+}
+
+@media (max-width: 500px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
 }
